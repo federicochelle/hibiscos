@@ -1,0 +1,94 @@
+/* =========================
+   GALERÍA (background-image)
+========================= */
+
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  padding: 0;
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  height: 320px; /* base */
+}
+
+/* Más altas en desktop */
+@media (min-width: 900px) {
+  .gallery-item {
+    height: 440px;
+  }
+}
+
+/* Degradé general (viñeta suave) */
+.gallery-item::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+
+  background:
+    linear-gradient(to top, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0) 45%),
+    radial-gradient(
+      circle at center,
+      rgba(0, 0, 0, 0) 55%,
+      rgba(0, 0, 0, 0.35) 100%
+    );
+}
+
+/* Caption */
+.gallery-caption {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  padding: 0.9rem 1rem;
+  font-size: 0.95rem;
+  color: #fff;
+  z-index: 2;
+}
+
+/* Hover suave solo desktop */
+@media (hover: hover) and (pointer: fine) {
+  .gallery-item:hover {
+    transform: scale(1.01);
+    transition: transform var(--transition-base);
+  }
+}
+
+/* =========================
+   MOBILE: scroll horizontal sin scrollbar
+========================= */
+
+@media (max-width: 760px) {
+  .gallery {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: min(85%, 360px);
+    gap: var(--space-sm);
+
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+
+    padding-inline: var(--space-sm);
+    margin-inline: calc(var(--space-sm) * -1);
+  }
+
+  .gallery-item {
+    scroll-snap-align: start;
+    height: 400px;
+  }
+
+  /* Ocultar scrollbar */
+  .gallery::-webkit-scrollbar {
+    display: none;
+  }
+  .gallery {
+    scrollbar-width: none;
+  }
+}

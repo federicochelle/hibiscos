@@ -1,0 +1,71 @@
+/* =========================
+   FOOTER
+========================= --color-bg: #FAF4F2;
+--color-bg-soft: #F1E1DC;
+--color-surface: #FFFFFF;
+--color-primary: #E6C6BF;
+--color-primary-dark: #B88A7F;*/
+
+.footer {
+  color: var(--color-bg);
+  background: #b88a7f;
+  border-top: 1px solid var(--color-border);
+  padding: var(--space-lg) 0;
+}
+
+.footer-inner {
+  display: grid;
+  gap: var(--space-sm);
+  text-align: center;
+  justify-items: center;
+}
+
+.footer-brand {
+  margin: 0;
+  line-height: 1.2;
+}
+
+.footer-sep {
+  opacity: 0.6;
+  margin-inline: 0.35rem;
+}
+
+.footer-links {
+  display: flex;
+  gap: var(--space-sm);
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.footer-links a {
+  font-size: 0.95rem;
+  color: var(--color-text);
+  opacity: 0.9;
+  transition:
+    opacity var(--transition-fast),
+    color var(--transition-fast);
+}
+
+.footer-links a:hover {
+  opacity: 1;
+  color: var(--color-bg);
+}
+
+/* Desktop: en una línea prolija */
+@media (min-width: 900px) {
+  .footer-inner {
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    text-align: left;
+    justify-items: start;
+  }
+
+  .footer-links {
+    justify-content: center;
+  }
+
+  .footer-inner small {
+    justify-self: end;
+    text-align: right;
+  }
+}

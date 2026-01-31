@@ -1,0 +1,57 @@
+/* =========================
+   PRUEBA SOCIAL
+========================= */
+
+.testimonial strong {
+  color: var(--color-text);
+}
+
+/* Estrellas */
+.stars {
+  display: inline-flex;
+  gap: 6px;
+  align-items: center;
+}
+
+.star {
+  width: 16px;
+  height: 16px;
+  fill: var(--color-gold, #d4b483);
+  opacity: 0.95;
+}
+
+/* =========================
+   MOBILE: carrusel por scroll (snap)
+   Sin slider / sin JS
+========================= */
+
+@media (max-width: 760px) {
+  /* Convertimos el grid en tira horizontal */
+  .testimonials {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: min(85%, 360px);
+    gap: var(--space-sm);
+
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+
+    /* para que la primera y última no queden pegadas */
+    padding-inline: var(--space-sm);
+    margin-inline: calc(var(--space-sm) * -1);
+  }
+
+  .testimonial {
+    scroll-snap-align: start;
+  }
+
+  /* Opcional: ocultar scrollbar (mantiene scroll) */
+  .testimonials::-webkit-scrollbar {
+    display: none;
+  }
+  .testimonials {
+    scrollbar-width: none;
+  }
+}

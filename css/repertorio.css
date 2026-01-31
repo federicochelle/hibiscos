@@ -1,0 +1,68 @@
+/* =========================
+   REPERTORIO
+========================= */
+
+.repertorio-card {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.repertorio-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: var(--radius-md);
+  display: grid;
+  place-items: center;
+
+  background: var(--color-bg-soft);
+  border: 1px solid var(--color-border);
+}
+
+.repertorio-icon svg {
+  width: 60px;
+  height: 60px;
+  color: var(--color-primary-dark);
+}
+
+/* En desktop lo centramos visualmente si querés mantener el look del bloque */
+@media (min-width: 760px) {
+  #repertorio .repertorio-grid {
+    text-align: left;
+  }
+}
+
+/* En mobile: cards más cómodas */
+@media (max-width: 760px) {
+  .repertorio-card {
+    text-align: center;
+    margin-left: 2rem;
+    margin-right: 2rem;
+  }
+}
+
+/* =========================
+   REPERTORIO – LAYOUT
+========================= */
+
+/* Desktop: horizontal */
+#repertorio .grid-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-md);
+}
+
+/* Tablet: 2 columnas (opcional pero muy recomendado) */
+@media (max-width: 1024px) {
+  #repertorio .grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobile: vertical */
+@media (max-width: 640px) {
+  #repertorio .grid-4 {
+    grid-template-columns: 1fr;
+  }
+}

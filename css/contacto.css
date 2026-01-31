@@ -1,0 +1,59 @@
+/* =========================
+   CONTACTO
+========================= */
+
+.section-contacto {
+  background: linear-gradient(to bottom, var(--color-bg-soft), var(--color-bg));
+  border-top: 1px solid var(--color-border);
+}
+
+.section-contacto .container {
+  padding-top: var(--space-xl);
+  padding-bottom: var(--space-xl);
+}
+
+/* Texto */
+.section-contacto h2 {
+  max-width: 22ch;
+  margin-inline: auto;
+}
+
+.section-contacto p {
+  max-width: 55ch;
+  margin-inline: auto;
+}
+
+/* CTA (botones) */
+.section-contacto .cta-actions {
+  display: flex; /* <- lo que te falta */
+  justify-content: center;
+  align-items: center;
+  gap: var(--space-sm);
+  flex-wrap: wrap;
+  margin-top: var(--space-sm);
+}
+
+/* Botones consistentes */
+.section-contacto .cta-actions .btn {
+  min-height: 44px;
+  line-height: 1;
+  padding: 0.75rem 1.1rem;
+}
+
+/* Mobile: apilar */
+@media (max-width: 520px) {
+  .section-contacto .cta-actions {
+    width: 100%;
+  }
+
+  .section-contacto .cta-actions .btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* Nota final */
+.section-contacto small {
+  display: block;
+  margin-top: var(--space-sm);
+}
