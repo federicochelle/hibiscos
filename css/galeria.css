@@ -44,7 +44,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-
+  font-family: var(--font-display);
   padding: 0.9rem 1rem;
   font-size: 0.95rem;
   color: #fff;

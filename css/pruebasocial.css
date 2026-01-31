@@ -25,7 +25,12 @@
 .testimonial {
   text-align: center;
 }
-
+.testimonial strong {
+  display: block;
+  margin-top: 1rem;
+  padding-top: 0.5rem;
+  border-top: 1px solid var(--color-border);
+}
 /* =========================
    CARRUSEL “SIN SLIDER” (mobile)
 ========================= */
