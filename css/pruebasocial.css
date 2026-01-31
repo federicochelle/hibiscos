@@ -1,36 +1,42 @@
 /* =========================
-   PRUEBA SOCIAL
+   TESTIMONIOS (desktop)
 ========================= */
 
-.testimonial strong {
-  color: var(--color-text);
+.testimonials {
+  /* en desktop usás tu .grid .grid-3, no lo tocamos */
+  margin-top: var(--space-md);
 }
 
-/* Estrellas */
+/* estrellas */
 .stars {
   display: inline-flex;
-  gap: 6px;
-  align-items: center;
+  gap: 0.35rem;
+  justify-content: center;
 }
 
 .star {
-  width: 16px;
-  height: 16px;
-  fill: var(--color-gold, #d4b483);
+  width: 18px;
+  height: 18px;
+  fill: #d6b37b; /* doradito suave */
   opacity: 0.95;
 }
 
-/* =========================
-   MOBILE: carrusel por scroll (snap)
-   Sin slider / sin JS
-========================= */
+/* card */
+.testimonial {
+  text-align: center;
+}
 
+/* =========================
+   CARRUSEL “SIN SLIDER” (mobile)
+========================= */
 @media (max-width: 760px) {
-  /* Convertimos el grid en tira horizontal */
   .testimonials {
+    /* IMPORTANTÍSIMO: pisar lo que traiga .grid/.grid-3 */
+    grid-template-columns: none !important;
+
     display: grid;
     grid-auto-flow: column;
-    grid-auto-columns: min(85%, 360px);
+    grid-auto-columns: min(86%, 360px);
     gap: var(--space-sm);
 
     overflow-x: auto;
@@ -38,16 +44,21 @@
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
 
-    /* para que la primera y última no queden pegadas */
-    padding-inline: var(--space-sm);
-    margin-inline: calc(var(--space-sm) * -1);
+    /* aire real a los costados */
+    padding-inline: var(--space-md);
+    padding-block: 0.25rem;
+
+    width: 100%;
+    max-width: 100%;
   }
 
   .testimonial {
-    scroll-snap-align: start;
+    scroll-snap-align: center;
+    /* evita “aplastes” raros por contenido */
+    min-width: 0;
   }
 
-  /* Opcional: ocultar scrollbar (mantiene scroll) */
+  /* ocultar scrollbar */
   .testimonials::-webkit-scrollbar {
     display: none;
   }

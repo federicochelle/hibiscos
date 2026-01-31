@@ -209,3 +209,39 @@ small {
 .section-contrast {
   background: linear-gradient(to bottom, var(--color-bg), #efe6e2);
 }
+/* =========================
+   SECCIONES – Alternancia global (invertida)
+========================= */
+
+.sections .section {
+  position: relative;
+  background: var(--color-bg-soft); /* ahora empieza soft */
+}
+
+/* Pares en blanco */
+.sections .section:nth-of-type(even) {
+  background: var(--color-bg);
+}
+
+/* Patrón SOLO en las secciones soft (impares ahora) */
+.sections .section:nth-of-type(odd)::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+
+  background-image: repeating-linear-gradient(
+    135deg,
+    rgba(74, 63, 60, 0.035),
+    rgba(74, 63, 60, 0.035) 1px,
+    transparent 1px,
+    transparent 18px
+  );
+}
+
+/* El contenido siempre arriba */
+.sections .section > * {
+  position: relative;
+  z-index: 1;
+}

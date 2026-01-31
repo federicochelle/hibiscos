@@ -188,8 +188,16 @@
 }
 
 @media (max-width: 520px) {
-  .brand-text {
-    display: none;
+  .brand-logo {
+    width: 80px;
+    top: 4px;
+  }
+  .brand-name {
+    font-size: 0.8rem;
+  }
+
+  .brand-sub {
+    font-size: 0.5rem;
   }
 
   .brand-logo {
