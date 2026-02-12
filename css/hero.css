@@ -105,47 +105,65 @@
 }
 
 /* =========================
-   HERO – MOBILE
+   HERO – MOBILE (solo ajustes)
 ========================= */
 @media (max-width: 700px) {
   .hero {
-    min-height: 78vh;
+    min-height: 82svh; /* mejor que vh en iPhone */
+  }
+
+  /* Overlay más legible en mobile */
+  .hero::before {
+    background: linear-gradient(
+      90deg,
+      rgba(250, 247, 245, 0.95) 0%,
+      rgba(250, 247, 245, 0.82) 55%,
+      rgba(250, 247, 245, 0.3) 100%
+    );
   }
 
   .hero-content {
     text-align: left;
-    padding: 5rem 1.4rem 3rem; /* 👈 padding lateral */
+    padding: 5.25rem 1.25rem 3.25rem; /* aire lateral + arriba */
   }
 
   .hero-copy {
-    display: flex;
-    flex-direction: column;
     max-width: 100%;
-    gap: 1rem;
+    display: grid;
+    gap: 1.1rem; /* separa “todo” sin tocar márgenes uno por uno */
+  }
+
+  .hero-eyebrow {
+    font-size: 0.75rem;
+    letter-spacing: 0.16em;
+    margin: 0;
   }
 
   .hero-title {
-    max-width: 18ch;
-    font-size: clamp(1.9rem, 7vw, 2.3rem);
-    line-height: 1.08;
-
-    margin: 0; /* 👈 importante */
+    max-width: 16ch;
+    font-size: clamp(2.05rem, 8.6vw, 2.55rem);
+    line-height: 1.06;
+    margin: 0;
   }
 
   .hero-lead {
-    font-size: 1.15rem;
-    line-height: 1.5;
-    max-width: 36ch;
-    font-weight: 600;
+    font-size: 1.12rem;
+    line-height: 1.45;
+    max-width: 34ch;
+    font-weight: 700; /* más “presencia” */
     margin: 0;
   }
 
   .cta-actions {
-    justify-content: flex-start; /* 👈 izquierda */
+    justify-content: flex-start;
+    gap: 0.75rem;
+    margin-top: 0.25rem;
   }
 
   .cta-actions .btn {
-    min-width: 200px;
+    width: auto;
+    min-width: 230px; /* se ve más CTA */
+    justify-content: center;
   }
 
   .cta-actions .btn-outline {
