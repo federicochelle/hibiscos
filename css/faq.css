@@ -1,15 +1,6 @@
-/* =========================
-   FAQ (details / summary)
-   Requiere: .card, variables, etc.
-========================= */
-
-#faq .container {
-  max-width: 900px; /* más elegante que full width */
-}
-
-/* Cada item */
+/* FAQ base */
 #faq details.card {
-  padding: 0; /* dejamos el padding al summary/content */
+  padding: 0;
   border-radius: var(--radius-lg);
   background: color-mix(in srgb, var(--color-surface) 75%, transparent);
   border: 1px solid var(--color-border);
@@ -17,12 +8,10 @@
   overflow: hidden;
 }
 
-/* Separación vertical entre items */
 #faq details.card + details.card {
   margin-top: var(--space-sm);
 }
 
-/* Barra clickable */
 #faq summary {
   cursor: pointer;
   list-style: none;
@@ -30,20 +19,16 @@
   grid-template-columns: 1fr auto;
   align-items: center;
   gap: var(--space-sm);
-
   padding: 1.05rem 1.2rem;
   font-weight: var(--font-weight-medium);
   color: var(--color-text);
-
   user-select: none;
 }
 
-/* Quita el triangulito default */
 #faq summary::-webkit-details-marker {
   display: none;
 }
 
-/* Chevron minimal */
 #faq summary::after {
   content: "▾";
   font-size: 1.15rem;
@@ -54,71 +39,51 @@
     opacity var(--transition-fast);
 }
 
-/* Hover suave */
-#faq details.card:hover summary {
-  background: color-mix(in srgb, var(--color-primary) 10%, transparent);
-}
-
-/* Focus accesible */
-#faq summary:focus-visible {
-  outline: 2px solid var(--color-primary);
-  outline-offset: -2px;
-}
-
-/* Estado abierto: borde/acento sutil */
-#faq details[open].card {
-  border-color: color-mix(
-    in srgb,
-    var(--color-primary) 35%,
-    var(--color-border)
-  );
-  box-shadow: var(--shadow-md);
-}
-
-/* Chevron al abrir */
 #faq details[open] summary::after {
   transform: rotate(180deg);
   opacity: 1;
 }
 
-/* Contenido */
-#faq details.card > p {
-  margin: 0;
-  padding: 1rem 1.2rem 1.1rem;
-  color: var(--color-text-muted);
-  line-height: 1.6;
-  max-width: 70ch;
-}
-
-/* Línea divisoria interna cuando abre */
 #faq details[open] summary {
   border-bottom: 1px solid var(--color-border);
   background: color-mix(in srgb, var(--color-primary) 8%, transparent);
 }
 
-/* Animación suave (sin romper compatibilidad) */
-#faq details.card > p {
-  animation: faqFade 180ms ease;
+/* Panel animable */
+#faq .faq-panel {
+  height: 0; /* JS la maneja */
+  overflow: hidden;
+  padding: 0 1.2rem; /* padding lateral constante */
+  will-change: height;
 }
 
-@keyframes faqFade {
-  from {
-    opacity: 0;
-    transform: translateY(-2px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+#faq .faq-panel p {
+  margin: 0;
+  padding: 1rem 0 1.1rem; /* padding vertical acá */
+  color: var(--color-text-muted);
+  line-height: 1.6;
+  max-width: 70ch;
+
+  opacity: 0;
+  transform: translateY(-4px);
+  transition:
+    opacity 180ms ease,
+    transform 180ms ease;
 }
 
-/* Mobile: un toque más compacto */
+#faq details[open] .faq-panel p {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 @media (max-width: 520px) {
   #faq summary {
     padding: 0.95rem 1rem;
   }
-
-  #faq details.card > p {
-    padding: 1rem 1rem 1rem;
+  #faq .faq-panel {
+    padding: 0 1rem;
+  }
+  #faq .faq-panel p {
+    padding: 1rem 0;
   }
 }

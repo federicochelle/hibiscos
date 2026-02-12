@@ -1,12 +1,11 @@
-/* =========================
-   LAYOUT
-========================= */
+/* =====================================================
+   LAYOUT.CSS — Librería (NEUTRA)
+   Layout reusable: containers, grids, stacks, helpers
+===================================================== */
 
 /* =========================
    CONTAINERS
 ========================= */
-
-/* Contenedor principal */
 .container {
   width: 100%;
   max-width: 1200px;
@@ -14,7 +13,7 @@
   padding-inline: var(--space-sm);
 }
 
-/* Variantes opcionales */
+/* Variantes */
 .container-narrow {
   max-width: 960px;
 }
@@ -26,35 +25,29 @@
 /* =========================
    SECCIONES
 ========================= */
-
 .section {
   padding-block: var(--space-xl);
+
+  border-bottom: 1px solid var(--color-border);
 }
 
-@media (max-width: 700px) {
-  .section {
-    padding-inline: 0; /* la sección no empuja */
-  }
-
-  .section .container {
-    padding-inline: 2rem; /* margen visual cómodo */
-  }
+/* Si querés separador visual, usás este modifier */
+.section--divided {
+  border-bottom: 1px solid var(--color-border);
 }
+
 /* =========================
    GRID
 ========================= */
-
 .grid {
   display: grid;
   gap: var(--space-md);
 }
 
-/* Grid 2 columnas responsive */
 .grid-2 {
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
 }
 
-/* Grid 3 columnas responsive */
 .grid-3 {
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
 }
@@ -62,7 +55,6 @@
 /* =========================
    FLEX HELPERS
 ========================= */
-
 .flex {
   display: flex;
 }
@@ -84,7 +76,6 @@
 /* =========================
    STACK (espaciado vertical)
 ========================= */
-
 .stack-xs > * + * {
   margin-top: var(--space-xs);
 }
@@ -104,15 +95,12 @@
 /* =========================
    TEXTO
 ========================= */
-
 .text-center {
   text-align: center;
 }
-
 .text-left {
   text-align: left;
 }
-
 .text-right {
   text-align: right;
 }
@@ -120,20 +108,16 @@
 /* =========================
    ANCHOS MÁXIMOS
 ========================= */
-
 .max-w-sm {
   max-width: 480px;
 }
-
 .max-w-md {
   max-width: 640px;
 }
-
 .max-w-lg {
   max-width: 800px;
 }
 
-/* Centrar bloques con max-width */
 .max-w-sm,
 .max-w-md,
 .max-w-lg {
@@ -143,7 +127,6 @@
 /* =========================
    SEPARADORES
 ========================= */
-
 .divider {
   width: 100%;
   height: 1px;
@@ -154,11 +137,9 @@
 /* =========================
    ALTURAS
 ========================= */
-
 .min-h-screen {
-  min-height: 100vh;
+  min-height: 100dvh;
 }
-
 .min-h-half {
   min-height: 50vh;
 }
@@ -166,11 +147,9 @@
 /* =========================
    POSICIONAMIENTO
 ========================= */
-
 .relative {
   position: relative;
 }
-
 .absolute {
   position: absolute;
 }
@@ -178,15 +157,12 @@
 /* =========================
    Z-INDEX
 ========================= */
-
 .z-1 {
   z-index: 1;
 }
-
 .z-10 {
   z-index: 10;
 }
-
 .z-100 {
   z-index: 100;
 }

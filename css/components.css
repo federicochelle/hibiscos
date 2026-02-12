@@ -1,214 +1,15 @@
-/* =========================
-   COMPONENTS
-========================= */
-/* =========================
-   NAVBAR
-========================= */
+/* =====================================================
+   COMPONENTS — NEUTRO
+===================================================== */
 
-.navbar {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-
-  min-height: 64px;
-  background: rgba(255, 255, 255, 0.75);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid var(--color-border);
-
-  overflow: visible; /* permite que el logo sobresalga */
-}
-
-.navbar-inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  min-height: 64px;
-}
-
-/* =========================
-   BRAND
-========================= */
-
-.brand {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.75rem; /* separación logo-texto */
-  position: relative;
-}
-
-/* Logo hibisco flotante */
-.brand-logo {
-  width: 100px; /* más grande */
-  height: auto;
-  object-fit: contain;
-
-  position: relative;
-  top: 8px; /* menos margin-top */
-
-  z-index: 1100;
-  filter: drop-shadow(0 6px 14px rgba(0, 0, 0, 0.15));
-}
-
-/* Texto al lado del logo */
-.brand-text {
-  display: flex;
-  flex-direction: column;
-  line-height: 1.05;
-  gap: 2px;
-}
-
-.brand-name {
-  font-family: var(--font-display, serif);
-  font-weight: 700;
-  letter-spacing: 0.05em;
-  font-size: 1.1rem;
-  color: var(--color-text);
-}
-
-.brand-sub {
-  font-family: var(--font-body, system-ui);
-  font-size: 0.75rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+/* Utilidad */
+.text-muted {
   color: var(--color-text-muted);
 }
 
 /* =========================
-   NAV DESKTOP
+   BUTTONS (neutros)
 ========================= */
-
-.nav {
-  position: relative; /* para que el dropdown mobile se ancle acá */
-}
-
-.nav-menu {
-  display: flex;
-  gap: var(--space-sm);
-  align-items: center;
-}
-
-.nav-menu a {
-  padding: 0.4rem 0.6rem;
-  border-radius: var(--radius-pill);
-  color: var(--color-text);
-}
-
-.nav-menu a:hover {
-  background: var(--color-bg-soft);
-}
-
-/* =========================
-   HAMBURGER BUTTON (mobile)
-========================= */
-
-.nav-toggle {
-  display: none; /* se prende en mobile */
-  width: 44px;
-  height: 44px;
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-pill);
-  background: rgba(255, 255, 255, 0.55);
-  backdrop-filter: blur(10px);
-  cursor: pointer;
-
-  align-items: center;
-  justify-content: center;
-}
-
-.nav-toggle-lines {
-  display: grid;
-  gap: 4px;
-}
-
-.nav-toggle-lines span {
-  width: 20px;
-  height: 2px;
-  background: var(--color-text);
-  border-radius: 2px;
-  transition:
-    transform 0.25s ease,
-    opacity 0.25s ease;
-}
-
-/* Animación X cuando está abierto */
-.nav-toggle[aria-expanded="true"] .nav-toggle-lines span:nth-child(1) {
-  transform: translateY(6px) rotate(45deg);
-}
-.nav-toggle[aria-expanded="true"] .nav-toggle-lines span:nth-child(2) {
-  opacity: 0;
-}
-.nav-toggle[aria-expanded="true"] .nav-toggle-lines span:nth-child(3) {
-  transform: translateY(-6px) rotate(-45deg);
-}
-
-/* =========================
-   MOBILE DROPDOWN
-========================= */
-
-@media (max-width: 760px) {
-  .nav-toggle {
-    display: inline-flex;
-  }
-
-  .nav-menu {
-    position: absolute;
-    top: calc(100% + 12px);
-    right: 0;
-
-    flex-direction: column;
-    align-items: stretch;
-    gap: 6px;
-
-    min-width: 210px;
-    padding: 10px;
-
-    background: rgba(255, 255, 255, 0.85);
-    backdrop-filter: blur(12px);
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-md);
-    box-shadow: var(--shadow-md);
-
-    opacity: 0;
-    pointer-events: none;
-    transform: translateY(-8px);
-    transition:
-      opacity 0.2s ease,
-      transform 0.2s ease;
-  }
-
-  .nav-menu.is-open {
-    opacity: 1;
-    pointer-events: auto;
-    transform: translateY(0);
-  }
-
-  .nav-menu a {
-    padding: 0.65rem 0.85rem;
-  }
-}
-
-@media (max-width: 520px) {
-  .brand-logo {
-    width: 90px;
-    top: 0px;
-  }
-  .brand-name {
-    font-size: 0.8rem;
-  }
-
-  .brand-sub {
-    font-size: 0.5rem;
-  }
-
-  .brand-logo {
-    width: 72px;
-    top: 10px;
-  }
-}
-/* =========================
-   BUTTONS
-========================= */
-
 .btn {
   display: inline-flex;
   align-items: center;
@@ -218,6 +19,7 @@
   padding: 0.65em 1.2em;
   border-radius: var(--radius-pill);
 
+  font-family: var(--font-ui);
   font-weight: var(--font-weight-medium);
   line-height: 1;
   white-space: nowrap;
@@ -227,25 +29,34 @@
     background var(--transition-fast),
     color var(--transition-fast),
     border-color var(--transition-fast),
-    transform var(--transition-fast);
+    transform var(--transition-fast),
+    box-shadow var(--transition-fast),
+    filter var(--transition-fast),
+    opacity var(--transition-fast);
 }
 
 .btn:active {
   transform: translateY(1px);
 }
 
-/* Botón primario */
+.btn-full {
+  width: 100%;
+}
+
+/* Primary (usa tokens, no marca) */
 .btn-primary {
   background: var(--color-primary);
-  color: var(--color-text);
+  color: var(--btn-primary-fg, #fff);
   border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-sm);
 }
 
 .btn-primary:hover {
   background: var(--color-primary-dark);
+  box-shadow: var(--shadow-md);
 }
 
-/* Botón outline */
+/* Outline (realmente neutro) */
 .btn-outline {
   background: transparent;
   color: var(--color-text);
@@ -253,18 +64,27 @@
 }
 
 .btn-outline:hover {
-  background: var(--color-bg-soft);
-}
-
-/* Botón ancho */
-.btn-full {
-  width: 100%;
+  background: color-mix(in srgb, var(--color-text) 6%, transparent);
 }
 
 /* =========================
-   CARD
+   ICONOS SVG (neutro)
 ========================= */
+.btn svg,
+.btn-icon {
+  width: 1.25em;
+  height: 1.25em;
+  flex-shrink: 0;
+  color: currentColor;
+}
 
+.btn svg {
+  stroke-width: 1.5;
+}
+
+/* =========================
+   CARDS (neutro)
+========================= */
 .card {
   background: var(--color-surface);
   border: 1px solid var(--color-border);
@@ -274,11 +94,10 @@
 }
 
 /* =========================
-   CTA BOX
+   CTA BOX (neutro)
 ========================= */
-
 .cta-box {
-  background: var(--color-bg-soft);
+  background: var(--color-surface);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
   padding: var(--space-lg);
@@ -291,9 +110,8 @@
 }
 
 /* =========================
-   FORM (base)
+   FORM (neutro)
 ========================= */
-
 form label span {
   display: block;
   font-weight: var(--font-weight-medium);
@@ -308,7 +126,7 @@ textarea {
   border-radius: var(--radius-sm);
   border: 1px solid var(--color-border);
 
-  background: var(--color-bg-soft);
+  background: var(--input-bg, var(--color-surface));
   color: var(--color-text);
 }
 
@@ -321,66 +139,4 @@ input:focus-visible,
 textarea:focus-visible {
   outline: 2px solid var(--color-primary);
   outline-offset: 2px;
-}
-
-/* =========================
-   UTILIDADES PEQUEÑAS
-========================= */
-
-.text-muted {
-  color: var(--color-text-muted);
-}
-
-/* =========================
-   DIVIDER – HIBISCUS
-========================= */
-
-.divider-hibiscus {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: var(--space-sm);
-
-  margin: var(--space-lg) 0;
-  color: var(--color-primary-dark);
-}
-
-.divider-hibiscus .line {
-  flex: 1;
-  height: 1px;
-  background: var(--color-border);
-  max-width: 120px;
-}
-
-.hibiscus-icon {
-  width: 20px;
-  height: 20px;
-  opacity: 0.9;
-}
-
-/* Mobile: más aire */
-@media (max-width: 640px) {
-  .divider-hibiscus .line {
-    max-width: 80px;
-  }
-
-  .hibiscus-icon {
-    width: 18px;
-    height: 18px;
-  }
-}
-
-.testimonial-tag {
-  display: inline-block;
-  margin-top: 0.25rem;
-
-  font-size: 0.65rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-
-  padding: 0.25rem 0.6rem;
-  border-radius: var(--radius-pill);
-
-  background: var(--color-bg-soft);
-  color: var(--color-text-muted);
 }

@@ -33,36 +33,117 @@
   </head>
 
   <body id="top">
-    <!-- =====================
-       NAVBAR
-  ====================== -->
-    <header class="navbar">
-      <div class="container navbar-inner">
-        <a class="brand" href="#top" aria-label="Inicio">
-          <img class="brand-logo brand-logo--float" src="assets/logo.png" alt="Los Hibiscos" />
-          <span class="brand-text">
-            <span class="brand-name">Los Hibiscos</span>
-            <span class="brand-sub">músicos</span>
-          </span>
-        </a>
+   <!-- Header -->
+    <header class="site-header">
+      <div class="container flex flex-between flex-wrap header-inner">
+        <!-- Brand -->
+        <a class="brand brand-logo-only brand-with-text" href="#top" aria-label="Los Hibiscos">
+  <img class="brand-logo" src="assets/logo.png" alt="Los Hibiscos" width="44" height="44" loading="eager" />
+  <span class="brand-text">
+    <small class="brand-kicker">Músicos</small>
+    <strong class="brand-name">Los Hibiscos</strong>
+  </span>
+</a>
+        <!-- Nav desktop -->
+        <nav class="nav nav-desktop" aria-label="Navegación principal">
+          <a class="nav-link" href="#repertorio">Repertorio</a>
+  <a class="nav-link" href="#galeria">Quiénes somos</a>
+  <a class="nav-link" href="#faq">FAQ</a>
+  <a class="nav-link" href="#contacto">Contacto</a>
 
-        <nav class="nav" aria-label="Navegación principal">
-  <button class="nav-toggle" aria-expanded="false" aria-controls="menu">
-    <span class="nav-toggle-lines" aria-hidden="true">
-      <span></span><span></span><span></span>
-    </span>
-  </button>
+  <a class="btn btn-primary nav-cta" href="https://wa.me/59891438233?text=Hola!%20Quisiera%20consultar%20disponibilidad%20para%20un%20evento." target="_blank" rel="noopener">
+    Consultar por WhatsApp
+  </a>
 
-  <div id="menu" class="nav-menu">
-    <a href="#servicios">Servicios</a>
-    <a href="#galeria">Galería</a>
-    <a href="#faq">Preguntas</a>
-  </div>
-</nav>
+          <!-- Link secundario (Instagram) -->
+          <a
+            class="btn btn-outline"
+            href="https://www.instagram.com/loshibiscosmusicos/"
+            target="_blank"
+            rel="noopener"
+            aria-label="Instagram de Los Hibiscos"
+            title="Instagram"
+          >
+            <svg
+              class="btn-icon"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.25"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+              <path
+                d="M4 8a4 4 0 0 1 4 -4h8a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-8a4 4 0 0 1 -4 -4l0 -8"
+              />
+              <path d="M9 12a3 3 0 1 0 6 0a3 3 0 0 0 -6 0" />
+              <path d="M16.5 7.5v.01" />
+            </svg>
+            Instagram
+          </a>
+        </nav>
+
+        <!-- Botón hamburguesa (mobile) -->
+        <button
+          class="nav-toggle"
+          type="button"
+          aria-label="Abrir menú"
+          aria-expanded="false"
+          aria-controls="mobile-menu"
+        >
+          <span class="nav-toggle-lines" aria-hidden="true"></span>
+        </button>
+      </div>
+
+      <!-- Overlay (mobile) -->
+      <div class="menu-overlay" data-menu-close hidden></div>
+
+      <!-- Menú mobile -->
+      <div class="mobile-menu" id="mobile-menu" hidden>
+        <nav class="nav nav-mobile" aria-label="Menú móvil">
+             <a class="nav-link" href="#repertorio" data-menu-close>Repertorio</a>
+  <a class="nav-link" href="#galeria" data-menu-close>Quiénes somos</a>
+  <a class="nav-link" href="#faq" data-menu-close>FAQ</a>
+  <a class="nav-link" href="#contacto"data-menu-close >Contacto</a>
+
+  <a class="btn btn-primary nav-cta" href="https://wa.me/59891438233?text=Hola!%20Quisiera%20consultar%20disponibilidad%20para%20un%20evento." target="_blank" rel="noopener">
+    Consultar por WhatsApp
+  </a>
+
+          <a
+            class="btn btn-outline"
+            href="https://www.instagram.com/loshibiscosmusicos/"
+            target="_blank"
+            rel="noopener"
+            data-menu-close
+          >
+            <svg
+              class="btn-icon"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.25"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+              <path
+                d="M4 8a4 4 0 0 1 4 -4h8a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-8a4 4 0 0 1 -4 -4l0 -8"
+              />
+              <path d="M9 12a3 3 0 1 0 6 0a3 3 0 0 0 -6 0" />
+              <path d="M16.5 7.5v.01" />
+            </svg>
+            Instagram
+          </a>
+        </nav>
       </div>
     </header>
-
-    <main id="top" class="sections">
+     <main class="sections">
       <!-- =====================
          HERO
     ====================== -->
@@ -94,22 +175,19 @@
               <a class="btn btn-primary" href="#contacto">
                 Consultar disponibilidad
               </a>
-              <a class="btn btn-outline" href="#repertorio"> Ver opciones </a>
-            </div>
+             </div>
           </div>
         </div>
       </section>
 
-      <!-- =====================
-           PRUEBA SOCIAL
-      ====================== -->
+   
       <!-- =====================
      PRUEBA SOCIAL
 ====================== -->
       <section class="section social-proof" aria-label="Testimonios">
         <div class="container stack-md text-center">
           <header class="stack-sm">
-            <h2>Más de 100 bodas y eventos</h2>
+            <h2>Más de 70 bodas y eventos</h2>
             <p class="text-muted max-w-md">
               Reseñas reales de clientes y presentaciones institucionales.
             </p>
@@ -148,9 +226,9 @@
               </div>
 
               <p class="text-muted">
-                “Una ambientación impecable, elegante y sensible. Musicalizaron nuestra boda con un cuidado y una calidez que superaron todas nuestras expectativas.”
-              </p>
-              <strong>Ana &amp; Tomás</strong>
+              Fue una experiencia hermosa tener a este grupo en mi casamiento, hicieron un show tremendo con temas que nos encantaban, se pasó de 10. Muy prolijos los chiquilines y muy buenos musicos! Ya los quiero tener denuevo!
+</p>
+              <strong>Ana &amp; Mario</strong>
             </article>
 
             <!-- Card 2 -->
@@ -184,9 +262,8 @@
               </div>
 
               <p class="text-muted">
-                “Profesionalismo absoluto y una presencia sonora perfecta para la celebración. Supieron leer cada momento y acompañarlo con la música justa.”
-              </p>
-              <strong>Laura</strong>
+               Estuvieron en mi cumpleaños y fue una expriencia unica, muy buenos musicos, buena onda y muy profesionales. Los recomiendo!!</p>
+              <strong>Mariano</strong>
               
             </article>
 
@@ -405,13 +482,22 @@
 Nuestro repertorio recorre jazz, bossa nova, blues, pop y música universal, con formaciones flexibles y una puesta en escena prolija y sensible. Buscamos crear una experiencia sonora y visual que se integre de forma natural, dejando un recuerdo especial en cada presentación.</p>
           </header>
 
-          <div class="gallery grid grid-3" aria-label="Fotos de presentaciones">
+          <div class="gallery" aria-label="Fotos de presentaciones">
+            <figure
+              class="card gallery-item"
+              style="background-image: url(assets/galeria.jpeg)"
+            >
+              <figcaption class="gallery-caption">
+               Parroquia del Ave María
+              </figcaption>
+            </figure>
+          
             <figure
               class="card gallery-item"
               style="background-image: url(assets/hero.jpg)"
             >
               <figcaption class="gallery-caption">
-                Salón Mirador · Montevideo
+                La Encandilada · Punta del este
               </figcaption>
             </figure>
 
@@ -420,7 +506,7 @@ Nuestro repertorio recorre jazz, bossa nova, blues, pop y música universal, con
               style="background-image: url(assets/hero1.jpg)"
             >
               <figcaption class="gallery-caption">
-                Hotel Boutique · Punta del Este
+                Casa del Yacht · Montevideo
               </figcaption>
             </figure>
 
@@ -429,14 +515,15 @@ Nuestro repertorio recorre jazz, bossa nova, blues, pop y música universal, con
               style="background-image: url(assets/hero2.jpg)"
             >
               <figcaption class="gallery-caption">
-                Evento institucional · Centro
+               Hotel Boutique Le Bibló
               </figcaption>
             </figure>
           </div>
+          
 
           <a
-            class="btn btn-primary
-            href="https://instagram.com"
+            class="btn btn-primary"
+            href= "https://www.instagram.com/loshibiscosmusicos/"
             target="_blank"
             rel="noopener"
           >
@@ -444,72 +531,79 @@ Nuestro repertorio recorre jazz, bossa nova, blues, pop y música universal, con
           </a>
         </div>
       </section>
+<!-- =====================
+         FAQ
+====================== -->
+<section class="section" id="faq" aria-label="Preguntas frecuentes">
+  <div class="container stack-md">
+    <header class="stack-sm text-center">
+      <h2>Preguntas frecuentes</h2>
+      <p class="text-muted max-w-md">
+        Respondemos las dudas más comunes para que puedas decidir con
+        tranquilidad.
+      </p>
+    </header>
 
-      <!-- =====================
-           FAQ
-      ====================== -->
-      <section class="section" id="faq" aria-label="Preguntas frecuentes">
-        <div class="container stack-md">
-          <header class="stack-sm text-center">
-            <h2>Preguntas frecuentes</h2>
-            <p class="text-muted max-w-md">
-              Respondemos las dudas más comunes para que puedas decidir con
-              tranquilidad.
-            </p>
-          </header>
+    <details class="card">
+      <summary>¿Qué tipo de música tocan?</summary>
+      <div class="faq-panel">
+        <p class="text-muted">
+          Nuestro repertorio abarca jazz, bossa nova, pop, música internacional
+          y clásicos de todos los tiempos. Adaptamos la selección musical según
+          el momento del evento y el perfil de los invitados, y también podemos
+          incluir canciones especiales a pedido.
+        </p>
+      </div>
+    </details>
 
-          <details class="card">
-            <summary>¿Qué tipo de música tocan?</summary>
-            <p class="text-muted">
-              Nuestro repertorio abarca jazz, bossa nova, pop, música
-              internacional y clásicos de todos los tiempos. Adaptamos la
-              selección musical según el momento del evento y el perfil de los
-              invitados, y también podemos incluir canciones especiales a
-              pedido.
-            </p>
-          </details>
+    <details class="card">
+      <summary>¿Cuánto dura la presentación?</summary>
+      <div class="faq-panel">
+        <p class="text-muted">
+          La duración se ajusta a la dinámica del evento. Podemos acompañar un
+          solo momento (como la ceremonia o la recepción) o cubrir distintos
+          tramos del evento con sets diferenciados, manteniendo siempre una
+          experiencia cuidada y coherente.
+        </p>
+      </div>
+    </details>
 
-          <details class="card">
-            <summary>¿Cuánto dura la presentación?</summary>
-            <p class="text-muted">
-              La duración se ajusta a la dinámica del evento. Podemos acompañar
-              un solo momento (como la ceremonia o la recepción) o cubrir
-              distintos tramos del evento con sets diferenciados, manteniendo
-              siempre una experiencia cuidada y coherente.
-            </p>
-          </details>
+    <details class="card">
+      <summary>¿En qué tipo de eventos se presentan?</summary>
+      <div class="faq-panel">
+        <p class="text-muted">
+          Nos presentamos en bodas, recepciones, eventos privados,
+          celebraciones especiales y eventos institucionales. Adaptamos tanto el
+          repertorio como la puesta en escena al espacio y al contexto.
+        </p>
+      </div>
+    </details>
 
-          <details class="card">
-            <summary>¿En qué tipo de eventos se presentan?</summary>
-            <p class="text-muted">
-              Nos presentamos en bodas, recepciones, eventos privados,
-              celebraciones especiales y eventos institucionales. Adaptamos
-              tanto el repertorio como la puesta en escena al espacio y al
-              contexto.
-            </p>
-          </details>
+    <details class="card">
+      <summary>¿Qué formato musical recomiendan?</summary>
+      <div class="faq-panel">
+        <p class="text-muted">
+          El formato depende del espacio, la cantidad de invitados y el clima
+          que se quiera generar. Podemos ofrecer desde dúos íntimos hasta
+          formaciones más amplias, y asesoramos en la elección para que el
+          resultado sea el adecuado.
+        </p>
+      </div>
+    </details>
 
-          <details class="card">
-            <summary>¿Qué formato musical recomiendan?</summary>
-            <p class="text-muted">
-              El formato depende del espacio, la cantidad de invitados y el
-              clima que se quiera generar. Podemos ofrecer desde dúos íntimos
-              hasta formaciones más amplias, y asesoramos en la elección para
-              que el resultado sea el adecuado.
-            </p>
-          </details>
-
-          <details class="card">
-            <summary>¿Cómo se realiza la contratación?</summary>
-            <p class="text-muted">
-              Es muy simple. Nos contactás con la fecha, el lugar y el tipo de
-              evento, y te enviamos una propuesta personalizada con las opciones
-              disponibles. Una vez confirmada, coordinamos todos los detalles
-              con antelación.
-            </p>
-          </details>
-        </div>
-      </section>
+    <details class="card">
+      <summary>¿Cómo se realiza la contratación?</summary>
+      <div class="faq-panel">
+        <p class="text-muted">
+          Es muy simple. Nos contactás con la fecha, el lugar y el tipo de
+          evento, y te enviamos una propuesta personalizada con las opciones
+          disponibles. Una vez confirmada, coordinamos todos los detalles con
+          antelación.
+        </p>
+      </div>
+    </details>
+  </div>
+</section>
      
 
       <!-- =====================
@@ -528,7 +622,7 @@ Nuestro repertorio recorre jazz, bossa nova, blues, pop y música universal, con
     <div class="cta-actions">
       <a
         class="btn btn-primary"
-        href="https://wa.me/598XXXXXXXX?text=Hola%20quisiera%20consultar%20por%20m%C3%BAsica%20en%20vivo%20para%20un%20evento"
+        href="https://wa.me/59891438233?text=Hola%20quisiera%20consultar%20por%20m%C3%BAsica%20en%20vivo%20para%20un%20evento"
         target="_blank"
         rel="noopener"
       >
@@ -558,21 +652,14 @@ Nuestro repertorio recorre jazz, bossa nova, blues, pop y música universal, con
 
     <nav class="footer-links" aria-label="Enlaces de contacto">
       <a href="#galeria">Galería</a>
-      <a href="https://instagram.com" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://instagram.com/loshibiscosmusicos/" target="_blank" rel="noopener">Instagram</a>
       <a href="mailto:contacto@loshibiscos.com">Email</a>
     </nav>
 
     <small class="text-muted">© <span id="year"></span> Los Hibiscos</small>
   </div>
 </footer>
-<script>
-  const toggle = document.querySelector(".nav-toggle");
-  const menu = document.querySelector(".nav-menu");
-
-  toggle.addEventListener("click", () => {
-    const isOpen = menu.classList.toggle("is-open");
-    toggle.setAttribute("aria-expanded", isOpen);
-  });
+<script src="js/navbar.js">
 </script>
 </body>
 </html>

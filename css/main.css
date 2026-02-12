@@ -12,6 +12,7 @@
    3. COMPONENTS (navbar, botones, cards)
 ========================= */
 @import "components.css";
+@import "navbar.css";
 
 /* =========================
    4. PAGES / SECTIONS (hero, landing)
@@ -26,4 +27,4 @@
 /* =========================
    5. OVERRIDES / FIXES (siempre al final)
 ========================= */
-/* @import "overrides.css"; */
+@import "overrides.css";

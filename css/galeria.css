@@ -1,5 +1,25 @@
 /* =========================
-   GALERÍA (background-image)
+   GALERÍA (layout)
+   Desktop: 4 en fila
+   Mobile: columna
+========================= */
+
+.gallery {
+  display: grid;
+  gap: var(--space-md);
+  grid-template-columns: 1fr;
+}
+
+/* Desktop: 4 en una fila */
+@media (min-width: 900px) {
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
+    align-items: stretch;
+  }
+}
+
+/* =========================
+   GALERÍA ITEM (background-image)
 ========================= */
 
 .gallery-item {
@@ -11,7 +31,8 @@
   background-position: center;
   background-repeat: no-repeat;
 
-  height: 320px; /* base */
+  height: 360px; /* base */
+  transform: translateZ(0);
 }
 
 /* Más altas en desktop */
@@ -44,6 +65,7 @@
   left: 0;
   right: 0;
   bottom: 0;
+
   font-family: var(--font-display);
   padding: 0.9rem 1rem;
   font-size: 0.95rem;
@@ -51,44 +73,20 @@
   z-index: 2;
 }
 
-/* Hover suave solo desktop */
+/* Hover suave (solo desktop real) */
 @media (hover: hover) and (pointer: fine) {
+  .gallery-item {
+    transition: transform var(--transition-base);
+  }
+
   .gallery-item:hover {
     transform: scale(1.01);
-    transition: transform var(--transition-base);
   }
 }
 
-/* =========================
-   MOBILE: scroll horizontal sin scrollbar
-========================= */
-
-@media (max-width: 760px) {
-  .gallery {
-    display: grid;
-    grid-auto-flow: column;
-    grid-auto-columns: min(85%, 360px);
-    gap: var(--space-sm);
-
-    overflow-x: auto;
-    overscroll-behavior-x: contain;
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
-
-    padding-inline: var(--space-sm);
-    margin-inline: calc(var(--space-sm) * -1);
-  }
-
+/* Mobile: un poquito más alta, pero en columna */
+@media (max-width: 899px) {
   .gallery-item {
-    scroll-snap-align: start;
-    height: 400px;
-  }
-
-  /* Ocultar scrollbar */
-  .gallery::-webkit-scrollbar {
-    display: none;
-  }
-  .gallery {
-    scrollbar-width: none;
+    height: 380px;
   }
 }

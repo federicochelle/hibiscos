@@ -112,59 +112,42 @@
     min-height: 78vh;
   }
 
-  /* Overlay más uniforme para legibilidad */
-  .hero::before {
-    background: linear-gradient(
-      90deg,
-      rgba(250, 247, 245, 0.92) 0%,
-      rgba(250, 247, 245, 0.74) 50%,
-      rgba(250, 247, 245, 0.22) 100%
-    );
-  }
-
   .hero-content {
-    text-align: center;
-    padding: 4.5rem 0 3rem;
+    text-align: left;
+    padding: 5rem 1.4rem 3rem; /* 👈 padding lateral */
   }
 
-  /* Eyebrow */
-  .hero-eyebrow {
-    font-size: 0.7rem;
-    letter-spacing: 0.12em;
-    margin-bottom: 0.5rem;
+  .hero-copy {
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+    gap: 1rem;
   }
 
-  /* TÍTULO – más compacto */
   .hero-title {
-    max-width: 13ch;
-    font-size: clamp(1.8rem, 7vw, 2.2rem);
-    line-height: 1.05;
-    margin-left: auto;
-    margin-right: auto;
+    max-width: 18ch;
+    font-size: clamp(1.9rem, 7vw, 2.3rem);
+    line-height: 1.08;
+
+    margin: 0; /* 👈 importante */
   }
 
-  /* TEXTO DESCRIPTIVO – más liviano */
   .hero-lead {
-    font-size: 0.95rem;
-    line-height: 1.45;
-    max-width: 32ch;
-    margin-left: auto;
-    margin-right: auto;
-    opacity: 0.9;
+    font-size: 1.15rem;
+    line-height: 1.5;
+    max-width: 36ch;
+    font-weight: 600;
+    margin: 0;
   }
 
-  /* CTA */
   .cta-actions {
-    justify-content: center;
+    justify-content: flex-start; /* 👈 izquierda */
   }
 
   .cta-actions .btn {
-    width: auto;
-    min-width: 220px;
-    justify-content: center;
+    min-width: 200px;
   }
 
-  /* CTA secundario oculto (menos ruido) */
   .cta-actions .btn-outline {
     display: none;
   }

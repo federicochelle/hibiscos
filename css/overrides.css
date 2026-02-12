@@ -1,0 +1,161 @@
+/* =========================
+   PALETA HIBISCOS
+========================= */
+
+:root {
+  --color-bg: #faf4f2;
+  --color-bg-soft: #f1e1dc;
+  --color-surface: #ffffff;
+
+  --color-primary: #e6c6bf;
+  --color-primary-dark: #b88a7f;
+
+  --color-text: #4a3f3c;
+  --color-text-muted: #7a6e6a;
+
+  --color-border: rgba(74, 63, 60, 0.12);
+
+  --shadow-sm: 0 6px 18px rgba(74, 63, 60, 0.14);
+  --shadow-md: 0 14px 40px rgba(74, 63, 60, 0.2);
+}
+
+/* =========================
+   FONDOS DE SECCIÓN
+========================= */
+
+.section {
+  background: var(--color-bg);
+}
+
+.section-soft {
+  background: var(--color-bg-soft);
+}
+
+.section-surface {
+  background: var(--color-surface);
+}
+
+.section-accent {
+  background: linear-gradient(to bottom, var(--color-bg-soft), var(--color-bg));
+}
+
+.section-contrast {
+  background: linear-gradient(to bottom, var(--color-bg), #efe6e2);
+}
+
+/* =========================
+   ALTERNANCIA GLOBAL
+========================= */
+
+.sections .section {
+  position: relative;
+  background: var(--color-bg-soft);
+}
+
+/* Secciones pares en bg normal */
+.sections .section:nth-of-type(even) {
+  background: var(--color-bg);
+}
+
+/* Patrón sutil solo en las soft */
+.sections .section:nth-of-type(odd)::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+
+  background-image: repeating-linear-gradient(
+    135deg,
+    rgba(74, 63, 60, 0.035),
+    rgba(74, 63, 60, 0.035) 1px,
+    transparent 1px,
+    transparent 18px
+  );
+}
+
+/* Asegurar contenido por encima del patrón */
+.sections .section > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* =====================================================
+   THEME — HIBISCOS (Componentes)
+===================================================== */
+
+/* Colores de inputs en hibiscos */
+:root {
+  --input-bg: var(--color-bg-soft);
+  --btn-primary-fg: var(--color-text); /* hibiscos: primary claro */
+}
+
+/* CTA box en hibiscos */
+.cta-box {
+  background: var(--color-bg-soft);
+}
+
+/* Outline hover en hibiscos */
+.btn-outline:hover {
+  background: var(--color-bg-soft);
+}
+
+/* Divider Hibiscus (100% marca) */
+.divider-hibiscus {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-sm);
+
+  margin: var(--space-lg) 0;
+  color: var(--color-primary-dark);
+}
+
+.divider-hibiscus .line {
+  flex: 1;
+  height: 1px;
+  background: var(--color-border);
+  max-width: 120px;
+}
+
+.hibiscus-icon {
+  width: 20px;
+  height: 20px;
+  opacity: 0.9;
+}
+
+@media (max-width: 640px) {
+  .divider-hibiscus .line {
+    max-width: 80px;
+  }
+
+  .hibiscus-icon {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+/* Tag estilo hibiscos */
+.testimonial-tag {
+  display: inline-block;
+  margin-top: 0.25rem;
+
+  font-size: 0.65rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+
+  padding: 0.25rem 0.6rem;
+  border-radius: var(--radius-pill);
+
+  background: var(--color-bg-soft);
+  color: var(--color-text-muted);
+}
+
+.brand-kicker {
+  color: var(--color-text);
+  font-size: 0.85rem;
+}
+.brand-name {
+  color: var(--color-text);
+  font-size: 1.1rem;
+}
